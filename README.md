@@ -1,4 +1,6 @@
 euler
 =====
 
-Project Euler Solutions
+Project Euler Solutions in python.
+
+This is a project to get som skills in python.
