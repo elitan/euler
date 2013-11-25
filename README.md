@@ -1,6 +1,6 @@
-euler
+Euler
 =====
 
-Project Euler Solutions in python.
+Project Euler Solutions in Python.
 
-This is a project to get som skills in python.
+Trying to learn some Python...
