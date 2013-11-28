@@ -5,4 +5,4 @@ Project Euler Solutions in Python.
 
 Trying to learn some Python...
 
-![alt tag](https://projecteuler.net/profile/elitasson.png)
+![Project Euler elitasson](https://projecteuler.net/profile/elitasson.png)
