@@ -12,13 +12,18 @@ n = 600851475143
 i = 2
 arr = []
 
+if n % 7 == 0:
+	print("asdsad")
+
 while i < m.sqrt(n) + 1:
 	while n % i == 0:
 		arr.append(i)
 		n = n / i
+		print("n: %d, i: %d" % (n, i))
      
 	i += 1
 
 arr.append(int(n))
 
+print(arr)
 print(arr[-1])

@@ -37,11 +37,10 @@ def devisors(n):
 	return dev
 
 
-maxDevisors = 500
 largest = 0
 value = 0
 i = 10
-while largest < 500:
+while largest < 100:
 
 	i += 1
 	n = 0

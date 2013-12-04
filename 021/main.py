@@ -14,6 +14,13 @@ sys.path.append("../")
 import functions as f
 import math as m
 
-l = f.primeFac(133798217398127398127389128379123)
+l = f.primeFac(28)
+d = list(set(l))
 
-print(l)
+for i in d:
+	for x in range(0, l.count(i)+1):
+		for j in d:
+			if j != i:
+				for y in range(0, l.count(j)+1):
+
+					print("%d*%d - %d*%d" % (i, x, j, y))
