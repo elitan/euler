@@ -12,6 +12,15 @@ Starting with the number 1 and moving to the right in a clockwise direction a 5 
 It can be verified that the sum of the numbers on the diagonals is 101.
 
 What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?
+
+
+9, 25, 49 == 3^2, 5^2, 7^2. top right diagonal.
+
+For every loop get the cordners. First loop:
+
+3^2 + 3^2-2 + 3^2-4 + 3^2-8 = 4*3^2 - 12
+5^2 + 5^2-4 + 5^2-8 + 5^2-12 = 4*5^2 - 24
+etc...
 """
 
 import math as m
