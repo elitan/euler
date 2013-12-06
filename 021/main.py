@@ -11,16 +11,15 @@ Evaluate the sum of all the amicable numbers under 10000.
 
 import sys
 sys.path.append("../")
+s = 0
 import functions as f
-import math as m
 
-l = f.primeFac(28)
-d = list(set(l))
+for i in range(1, 9999):
+	
+	l = sum(f.devisorsSlow(i))
 
-for i in d:
-	for x in range(0, l.count(i)+1):
-		for j in d:
-			if j != i:
-				for y in range(0, l.count(j)+1):
+	if i == sum(f.devisorsSlow(l)) and i != l:
+		print(i)
+		s += i
 
-					print("%d*%d - %d*%d" % (i, x, j, y))
+print("Summa: %d" % s)

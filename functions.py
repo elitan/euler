@@ -16,7 +16,7 @@ def primeFac(n):
 	return arr
 
 
-def devisors(n):
+def devisorsOld(n):
 	dev = 0
 	for i in range(2, int(m.ceil(n**0.5))):
 		if n % i == 0:
@@ -29,3 +29,14 @@ def devisors(n):
 	#if perfect square
 		#dev += 1
 	return dev
+
+def devisorsSlow(n):
+
+	dev = []
+
+	for i in range(1, int(n/2+1)):
+		if n % i == 0:
+			dev.append(i)
+
+	return dev
+
