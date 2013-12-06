@@ -4,34 +4,24 @@
 
 import math as m
 
-strn = ""
-sumv = 0;
-answer = 0;
+def fivePowSum(n):
 
-for a in range(0, 10):
-	for b in range(0, 10):
-		for c in range(0, 10):
-			for d in range(0, 10):
-				for e in range(0, 10):
+	s = 0
+	for i in str(n):
+		s += m.pow(float(i), 5)
 
-					strn = "";
-					sumv = 0;
+		if s > n:
+			break
 
-					strn += str(a)
-					strn += str(b)
-					strn += str(c)
-					strn += str(d)
-					strn += str(e)
+	if s == n:
+		return 1
+	else:
+		return 0
 
-					sumv += m.pow(a, 5);
-					sumv += m.pow(b, 5);
-					sumv += m.pow(c, 5);
-					sumv += m.pow(d, 5);
-					sumv += m.pow(e, 5);
+answer = 0
+for i in range(10, 1000000):
+	if(fivePowSum(i)):
+		answer += i
+		#print(i)
 
-					if sumv == int(strn) and sumv > 1:
-						answer += sumv
-						#print(strn)
-
-print(int(answer))
-				
+print(answer)
