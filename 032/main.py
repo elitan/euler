@@ -10,60 +10,30 @@ Find the sum of all products whose multiplicand/multiplier/product identity can 
 HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum.
 """
 
-def allNr(a,b,c):
-	st = ""
-	st += str(a)
-	st += str(b)
-	st += str(c)
+import itertools
 
-	try:	
-		st.index("1")
-		st.index("2")
-		st.index("3")
-		st.index("4")
-		st.index("5")
-		st.index("6")
-		st.index("7")
-		st.index("8")
-		st.index("9")
-	except Exception:
-		return False
+def intListToNr(l):
+	return int(''.join(map(str,l)))
 
-	if len(st) != 9:
-		return False
 
-	return True
+perm = itertools.permutations([1,2,3,4,5,6,7,8,9])
 
-def uniqCharInString(n):
-	n = str(n)
-	for i in range(0, len(n)):
-		if n.count(str(n[i:i+1])) > 1:
-			return False
+tempL = []
+answer = 0
 
-	return True	
+for span in range(5,10):
+	print(span)
+	for a in perm:
+		for i in range(1,span):
+			#print(a[0:2], a[2:3], a)
+			x = intListToNr(a[0:i])
+			y = intListToNr(a[i:span])
+			s = intListToNr(a[span:10])
+			z = x*y
+			if(s == z and s not in tempL):
+				print(a[0:i], a[i:span], a[span:10])
+				print(x,y,z)
+				tempL.append(s)
+				answer += s
 
-listOne = []	#stores c
-listTwo = [] 	#sum a and b
-
-c = 0
-
-for a in range(1, 200):
-	bmin = pow(10,8-len(str(a)))
-	bmax = pow(10,9-len(str(a)))
-	arg = ""
-
-	for b in range(bmin, bmax):
-
-		c = a * b
-		print("Testing at %d x %d = %d" % (a,b,c))
-
-		if not uniqCharInString("%d%d" % (a,b)):
-			#print("Breaking at %d x %d = %d" % (a,b,c))
-			break
-
-		if allNr(a,b,c) and c not in listOne:
-			print("Found %d x %d = %d" % (a, b, c))
-			listOne.append(c)
-			listTwo.append(a+b)
-
-print(sum(listTwo))
+print(answer)
