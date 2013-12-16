@@ -21,19 +21,18 @@ perm = itertools.permutations([1,2,3,4,5,6,7,8,9])
 tempL = []
 answer = 0
 
-for span in range(5,10):
-	print(span)
-	for a in perm:
-		for i in range(1,span):
-			#print(a[0:2], a[2:3], a)
-			x = intListToNr(a[0:i])
-			y = intListToNr(a[i:span])
-			s = intListToNr(a[span:10])
-			z = x*y
-			if(s == z and s not in tempL):
-				print(a[0:i], a[i:span], a[span:10])
-				print(x,y,z)
-				tempL.append(s)
-				answer += s
+
+for a in perm:
+	for i in range(1,5):
+		#print(a[0:2], a[2:3], a)
+		x = intListToNr(a[0:i])
+		y = intListToNr(a[i:5])
+		s = intListToNr(a[5:10])
+		z = x*y
+		if(s == z and s not in tempL):
+			print(a[0:i], a[i:5], a[5:10])
+			print(x,y,z)
+			tempL.append(s)
+			answer += s
 
 print(answer)
