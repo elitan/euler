@@ -53,4 +53,35 @@ def devisorsSlow(n):
 			dev.append(i)
 
 	return dev
+	
+def primeList(top):
+	primes = []
+	a = [2] * top
+	a[0] = 0
+	a[1] = 0
+	a[2] = 1
+	p = 2
 
+	while p < top:
+		a[p] = 1
+
+		for n in range(p*2, top, p):
+			a[n] = 0
+		p = findNextIndex(a, p, top)
+
+	for p in range(0, top):
+		if a[p] == 1:
+			primes.append(p)
+
+	return primes
+
+
+def findNextIndex(a, n, top):
+	n += 1
+	try:		
+		while a[n] != 2:
+			n += 1
+	except:
+		return top
+
+	return n
