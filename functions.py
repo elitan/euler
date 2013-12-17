@@ -1,3 +1,8 @@
+"""
+import sys
+sys.path.append("../")
+import functions as f
+"""
 import math as m
 
 def primeFac(n):
