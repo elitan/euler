@@ -7,7 +7,7 @@ def primeFac(n):
 	while i < m.sqrt(n) + 1:
 		while n % i == 0:
 			arr.append(i)
-			n = n / i:
+			n = n / i
 	     
 		i += 1
 
