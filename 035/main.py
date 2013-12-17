@@ -8,16 +8,11 @@ There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73
 How many circular primes are there below one million?
 """
 
-def findNextIndex(a, n, top):
-	n += 1
-	try:		
-		while a[n] != 2:
-			n += 1
-	except:
-		return top
+import sys
+sys.path.append("../")
+import functions as f
 
-	return n
-
+#Sieve of Eratosthenes
 def primeList(top):
 	primes = []
 	a = [2] * top
@@ -35,6 +30,47 @@ def primeList(top):
 
 	for p in range(0, top):
 		if a[p] == 1:
-			print(p)
+			primes.append(p)
 
-primeList(1000)
+	return primes
+
+
+def findNextIndex(a, n, top):
+	n += 1
+	try:		
+		while a[n] != 2:
+			n += 1
+	except:
+		return top
+
+	return n
+
+def circularPrime(p):
+	if '0' in str(p):
+		return False
+
+	for n in range(0, len(str(p))-1):
+		p = nextCircularNumber(p)
+		if not f.isPrime(p):
+			return False
+
+	return True
+
+def nextCircularNumber(n):
+	l = list(str(n))
+	nl = [0] * len(l)
+	
+	for index, n in enumerate(l):
+		nl[index - 1 % len(l)] = n
+
+	return int(''.join(nl))
+
+answer = 0
+pL = primeList(1000000)
+
+for p in pL:
+	if circularPrime(p):
+		print(p)
+		answer += 1
+
+print("Correct answer is: %d" % answer)
