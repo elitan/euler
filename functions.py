@@ -6,6 +6,7 @@ import functions as f
 import math as m
 
 def primeFac(n):
+	nR = n
 	i = 2
 	arr = []
 
@@ -17,7 +18,14 @@ def primeFac(n):
 		i += 1
 
 	arr.append(int(n))
-
+	try:
+		arr.remove(1)
+	except:
+		pass
+	try:
+		arr.remove(nR)
+	except:
+		pass
 	return arr
 
 def isPrime(n):
