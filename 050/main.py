@@ -34,7 +34,5 @@ for i in range(0, len(pl)):
 			t.append(sum(pl[i:j]))
 			mL = j-i
 			mV = sum(pl[i:j])
-
-print(t)
 print(mL)
-print(mV)
+print(mV)	#answer
