@@ -9,3 +9,31 @@ As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest numb
 
 Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 """
+
+import sys
+sys.path.append("../")
+import functions as f
+
+def isAbundant(n):
+	return sum(f.devisorsSlow(n)) > n
+
+l = [1] * 28123
+an = []
+
+for i in range(12, 28124):
+	if isAbundant(i):
+		an.append(i)
+
+for a in an:
+	for b in an:
+		try:
+			l[a+b] = 0
+		except:
+			pass
+
+answer = 0
+for i,c in enumerate(l):
+	if c == 1:
+		answer += i
+
+print(answer)
