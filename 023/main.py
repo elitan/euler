@@ -15,7 +15,13 @@ sys.path.append("../")
 import functions as f
 
 def isAbundant(n):
-	return sum(f.devisorsSlow(n)) > n
+	return sum(f.devisors(n)) > n
+
+
+#for i in range(1,10):
+	#print(f.devisorsSlow(i))
+	#print(devisors(i))
+
 
 l = [1] * 28123
 an = []
