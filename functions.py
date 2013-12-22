@@ -35,28 +35,26 @@ def isPrime(n):
 	return True    
 
 
-def devisorsOld(n):
-	dev = 0
+def devisors(n):
+	dev = []
+	dev.append(1)
 	for i in range(2, int(m.ceil(n**0.5))):
 		if n % i == 0:
-
-			dev += 1
-
-	#*2 + 1 and n
-	dev = dev * 2 + 2
-
-	#if perfect square
-		#dev += 1
-	return dev
-
-def devisorsSlow(n):
-
-	dev = []
-
-	for i in range(1, int(n/2+1)):
-		if n % i == 0:
 			dev.append(i)
+			dev.append(int(n/i))
 
+	#Find some n^1/x with no decimals
+	e = 2
+	a = 2.5
+	while a % 1 != 0 and a > 2:
+
+		a = pow(n, 1/e)
+		e += 1
+
+	if a % 1 == 0 and a not in dev:
+		dev.append(int(a))
+
+	dev.sort()
 	return dev
 	
 def primeList(top):
