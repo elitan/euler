@@ -23,12 +23,18 @@ def isPentagon(n):
 
 def pentagon(i):
 	return int(i*(3*i-1)/2)
-for a in range(1,10000):
-	for b in range(1,10000):
 
-		ap = pentagon(a)
-		bp = pentagon(b)
+jp = 0
+kp = 0
+j = 2
+found = False
+while not found:
+	jp = pentagon(j)
+	for k in range(1, j):
+		kp = pentagon(k)
 
-		if ap != bp and isPentagon(abs(ap-bp)) and isPentagon(ap+bp):
-			print("%d %d %d %d" % (ap, bp, abs(ap-bp), (ap+bp)))
+		if jp != kp and isPentagon(abs(jp-kp)) and isPentagon(jp+kp):
+			print(abs(jp-kp))
 			exit(0)
+
+	j += 1
