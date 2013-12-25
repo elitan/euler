@@ -8,7 +8,7 @@ Considering natural numbers of the form, ab, where a, b < 100, what is the maxim
 
 def sumN(n):
 	s = 0
-	for nr in list(str(n)):
+	for nr in str(n):
 		s += int(nr)
 	return s
 
