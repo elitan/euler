@@ -1,3 +1,5 @@
+#!/usr/bin/python 
+
 """
 Prime pair sets
 
@@ -20,30 +22,45 @@ def isPrimePairs(p, q):
 	return True
 
 def acombos(s):
-	i = 0
 
-	while i < len(s):
-		j = i + 1
-		while j < len(s):
+	for x in itertools.combinations(s, 2):
+		if not isPrimePairs(x[0], x[1]):
+			return False
 
-			if not isPrimePairs(s[i], s[j]):
-				return False
-			j += 1
-		i += 1
-	return True
-
+	return True;
 
 pl = f.primeList(10000000)
-s = [3, 7, 109, 673, 11]
 
-i = 5
-while not acombos(s):
-	try:
-		s[4] = pl[i]
-		i += 1
-	except:
-		print("Nope...");
-		exit(0)
 
-if acombos(s):
-	print(s)
+a, b, c, d, e = 2, 3, 5, 7, 11
+
+maxTic = 200
+
+while a < maxTic:
+	b = 0
+	while b < maxTic:
+		c = 1
+		while c < maxTic:
+			d = 2
+			while d < maxTic:
+				e = 3
+				while e < maxTic:
+
+					l = [pl[a], pl[b], pl[c], pl[d], pl[e]]
+
+					if acombos(l):
+
+						print("yes")
+						print(l)
+						print("")
+						sys.exit(0);
+					
+					e += 1
+				d += 1
+			c += 1
+			print("C: %d" % c)
+		b +=1
+		print("B: %d" % b)
+	a += 1
+	print("A: %d" % a)
+
