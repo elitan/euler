@@ -21,46 +21,40 @@ def isPrimePairs(p, q):
 		return False;
 	return True
 
-def acombos(s):
-
-	for x in itertools.combinations(s, 2):
-		if not isPrimePairs(x[0], x[1]):
-			return False
+def checkListForPairs(l):
+	for x in range(0, len(l)-1):
+		if not isPrimePairs(l[x], l[-1]):
+			return False;
 
 	return True;
 
-pl = f.primeList(10000000)
+def recF(l, d):
 
+	global c
 
-a, b, c, d, e = 2, 3, 5, 7, 11
+	ls = list(l)
+	ls.append(pl[d])
 
-maxTic = 200
+	#basecase
+	if d == 5:
+		print("FOUND IT")
+		print(ls[:-1])
+		print("sum: %d" % sum(ls[:-1]))
+		print("C: %d" % c)
+		sys.exit()
+		return 0
+	
+	for x in range(d, len(pl)):
+		c += 1
+		ls[-1] = pl[x]
+		#print(l, x)
+		if checkListForPairs(ls):
 
-while a < maxTic:
-	b = 0
-	while b < maxTic:
-		c = 1
-		while c < maxTic:
-			d = 2
-			while d < maxTic:
-				e = 3
-				while e < maxTic:
+			recF(ls, d+1)
 
-					l = [pl[a], pl[b], pl[c], pl[d], pl[e]]
+pl = f.primeList(9000)
+l = list()
 
-					if acombos(l):
-
-						print("yes")
-						print(l)
-						print("")
-						sys.exit(0);
-					
-					e += 1
-				d += 1
-			c += 1
-			print("C: %d" % c)
-		b +=1
-		print("B: %d" % b)
-	a += 1
-	print("A: %d" % a)
-
+c = 0
+recF(l, 0)
+print("found nothing. c: %d" % c)
