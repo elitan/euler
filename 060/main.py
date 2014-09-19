@@ -22,6 +22,7 @@ def isPrimePairs(p, q):
 	return True
 
 def checkListForPairs(l):
+	#only check the last item with the other numbers
 	for x in range(0, len(l)-1):
 		if not isPrimePairs(l[x], l[-1]):
 			return False;
@@ -32,6 +33,7 @@ def recF(l, d):
 
 	global c
 
+	#Start with adding a new element to the list
 	ls = list(l)
 	ls.append(pl[d])
 
@@ -45,16 +47,16 @@ def recF(l, d):
 		return 0
 	
 	for x in range(d, len(pl)):
-		c += 1
+		c += 1 
+		#new last item to check
 		ls[-1] = pl[x]
-		#print(l, x)
-		if checkListForPairs(ls):
 
+		# if all numbers in the list is prime pairs, go down one level
+		if checkListForPairs(ls):
 			recF(ls, d+1)
 
 pl = f.primeList(9000)
 l = list()
-
 c = 0
 recF(l, 0)
 print("found nothing. c: %d" % c)
