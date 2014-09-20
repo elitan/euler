@@ -44,7 +44,7 @@ def cyclickCheck(l, q):
 		return True
 	return False
 
-# Check if there exists two numb
+# final check
 def cyclickCheckLast(l):
 	if not l:
 		return True
@@ -52,22 +52,12 @@ def cyclickCheckLast(l):
 		return True
 	return False
 
-"""
-take list
- check check list against all other lists and counts
- if exists
- add number and "depth" to lists
-"""
+#taken referse to c in getP()
 
 def rec(l, taken):
 
 	for x in range(0, 6):
 		if x not in taken:
-
-			print("new x: %d" % x)
-			print(x)
-			print(l, taken)
-			print("")
 
 			go = True
 			n = 1
@@ -78,20 +68,12 @@ def rec(l, taken):
 					l.append(p)
 					taken.append(x)
 
-					print("new p: %d" % p)
-					print(x)
-					print(l, taken)
-					print("")
-
 					if len(taken) == 6:
-
 						if cyclickCheckLast(l):
-
 							print(l)
 							print(sum(l))
 							sys.exit()
 
-						print(l)
 						l.pop()
 						taken.pop()
 
@@ -101,6 +83,7 @@ def rec(l, taken):
 						rec(l, taken)
 						l.pop()
 						taken.pop()
+
 				elif len(str(p)) > 4:
 					go = False
 
