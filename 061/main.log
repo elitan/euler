@@ -1,0 +1,36 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=latex 2014.8.26)  20 SEP 2014 20:22
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**/Users/eli/github/euler/061/main.py
+(/Users/eli/github/euler/061/main.py
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 i
+     mport sys
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.2 i
+     mport sys
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
+Here is how much of TeX's memory you used:
+ 8 strings out of 493118
+ 331 string characters out of 6135459
+ 52906 words of memory out of 5000000
+ 3568 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 5i,0n,4p,48b,14s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.
