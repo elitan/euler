@@ -17,15 +17,14 @@ def primeFac(n):
 	     
 		i += 1
 
-	arr.append(int(n))
+	if n != nR:
+		arr.append(int(n))
+
 	try:
 		arr.remove(1)
 	except:
 		pass
-	try:
-		arr.remove(nR)
-	except:
-		pass
+
 	return arr
 
 def isPrime(n):
