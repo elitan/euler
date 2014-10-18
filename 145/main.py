@@ -3,11 +3,29 @@ Some positive integers n have the property that the sum [ n + reverse(n) ] consi
 
 There are 120 reversible numbers below one-thousand.
 
-How many reversible numbers are there below one-billion (109)?
+How many reversible numbers are there below one-billion (10^9)?
 """
 
+def onlyOddDigits(n):
+	for d in str(n):
+		if int(d) % 2 == 0:
+			return False;
+	return True;
+
+def isReversable(n):
+	if n % 10 != 0:
+		return onlyOddDigits(n + int(str(n)[::-1]))
+	else:
+		return False
+
 i = 0;
+r = 0;
 
-while i < 1000:
+while i < 10**9:
 
-	i += 1 #can probably improve this
+	if isReversable(i):
+		#print(i)
+		r += 1
+	i += 1
+
+print(r)
