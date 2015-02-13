@@ -2,6 +2,9 @@
 
 """
 to long...
+
+https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Continued_fraction_expansion
+
 """
 
 import math
@@ -13,21 +16,16 @@ def isOddDecimals(S):
 	if math.sqrt(S) == aZero:
 		return False
 
+	# initiate
 	a = aZero
 	m = 0
 	d = 1
 	c = 0
 
 	while a != 2*aZero:
-
 		m = (d * a) - m
 		d = (S - m*m) / d
-		
-		if d == 0:
-			print(S, m, d)
-
 		a = math.floor((aZero+m) / d)
-
 		c += 1
 
 	return c % 2 == 1
