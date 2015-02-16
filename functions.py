@@ -97,13 +97,4 @@ def findNextIndex(a, n, top):
 	return n
 
 def isPalindromic(n):
-	n = str(n)
-	i = 0
-
-	while i < len(n)/2:
-		if n[0 + i] != n[len(n) - 1 - i]:
-			
-			return False
-		i += 1
-
-	return True	
+	return n == str(n[::-1])
