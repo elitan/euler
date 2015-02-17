@@ -40,7 +40,7 @@ def devisors(n):
 largest = 0
 value = 0
 i = 10
-while largest < 100:
+while largest < 500:
 
 	i += 1
 	n = 0

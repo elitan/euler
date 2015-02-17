@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #!/bin/py
 
 """
@@ -16,9 +17,9 @@ import functions as f
 
 for i in range(1, 9999):
 	
-	l = sum(f.devisorsSlow(i))
+	l = sum(f.devisors(i))
 
-	if i == sum(f.devisorsSlow(l)) and i != l:
+	if i == sum(f.devisors(l)) and i != l:
 		print(i)
 		s += i
 
