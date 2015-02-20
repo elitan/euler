@@ -28,46 +28,29 @@ https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Pell.27s_equatio
 
 import math
 
-def alist(S):
-
-	aZero = math.floor(math.sqrt(S))
-	if math.sqrt(S) == aZero:
-		return False
-
-	# initiate
-	a = aZero
-	m = 0
-	d = 1
-	c = 0
-	l = list()
-	l.append(a)
-
-	while a != 2*aZero:
-		m = (d * a) - m
-		d = (S - m*m) / d
-		a = math.floor((aZero+m) / d)
-		c += 1
-		l.append(a)
-
-	return l
-
 def isPerfectSquare(n):
-	return math.sqrt(n) == math.floor(math.sqrt(n))
+	nsqrt = math.sqrt(n)
+	return nsqrt == math.floor(nsqrt)
 
-def contFraction(n, dalist):
-	
-
-largestx = 0
 dindex = 0
+xvalue = 0
 
-for d in range(2, 1001):
+for D in range(2, 1001):
 
-	if isPerfectSquare(d):
+	if isPerfectSquare(D):
 		continue
+	y = 1
+	found = False
+	while not found:
 
-	dalist = alist(d)
-	print(dalist)
+		xx = D * y**2 + 1
+		if isPerfectSquare(xx):
+			x = math.sqrt(xx)
+			print(x, y, D)
+			if x > xvalue:
+				xvalue = x
+				dindex = D
+			found = True
+		y += 1
 
-		
-
-print(largestx, dindex)
+print("Answer: d: %s with xvalue: %s" % (dindex, xvalue))
