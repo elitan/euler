@@ -50,16 +50,8 @@ def devisors(n):
 			dev.append(i)
 			dev.append(int(n/i))
 
-	#Find some n^1/x with no decimals
-	e = 2
-	a = 2.5
-	while a % 1 != 0 and a > 2:
-
-		a = pow(n, 1/e)
-		e += 1
-
-	if a % 1 == 0 and a not in dev:
-		dev.append(int(a))
+	if m.sqrt(n) == m.floor(m.sqrt(n)):
+		dev.append(m.sqrt(n))
 
 	dev.sort()
 	return dev
