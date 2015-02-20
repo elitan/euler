@@ -25,34 +25,62 @@ https://en.wikipedia.org/wiki/Pell%27s_equation
 https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Pell.27s_equation
 
 '''
-
 import math
 
 def isPerfectSquare(n):
 	nsqrt = math.sqrt(n)
 	return nsqrt == math.floor(nsqrt)
 
-dindex = 0
-xvalue = 0
+def converg(n):
+	#0
+	az = math.floor(math.sqrt(n))
+	p = az
+	p2 = p
+	q = 1
+	q2 = q
+	k = 0 # P
+	l = 1 # Q
 
-for D in range(61, 62):
+	#1
+	k = az
+	l = n - az**2
+	a = math.floor( (az + k ) / l)
+	p = az*a + 1
+	q = a
 
-	if isPerfectSquare(D):
+	try:
+		while p**2-n*q**2 != 1:
+
+			#print("%s^2 - %s*%s^2 = %s" % (p,n,q,p**2-n*q**2))
+			ptmp = p
+			qtmp = q
+
+			# start
+			k = a * l - k
+			l = (n - k**2) / l
+
+			a = math.floor( (az + k ) / l)
+			p = a*p+p2
+			q = a*q+q2
+
+
+			# ...
+			p2 = ptmp
+			q2 = qtmp
+	except:
+		print("%s DID NOT WORK" % i)
+
+	return int(p), int(q)
+xlargest = 0
+iindex = 0
+for i in range(2, 1001):
+	if isPerfectSquare(i):
 		continue
-	y = 1
-	found = False
-	while not found:
+	x,y = converg(i)
+	if x > xlargest:
+		xlargest = x
+		iindex = i
+	print(i, converg(i))
 
-		xx = (D * y**2 + 1)
-		if isPerfectSquare(xx):
-			found = True
-			print((D * y**2 + 1))
-			print(math.sqrt(D * y**2 + 1))
-			x = math.sqrt(xx)
-			print(x, y, D)
-			if x > xvalue:
-				xvalue = x
-				dindex = D
-		y += 1
+print(iindex, xlargest)
 
-print("Answer: d: %s with xvalue: %s" % (dindex, xvalue))
