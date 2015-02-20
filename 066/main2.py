@@ -26,6 +26,7 @@ https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Pell.27s_equatio
 
 '''
 import math
+import sys
 
 def isPerfectSquare(n):
 	nsqrt = math.sqrt(n)
@@ -41,6 +42,8 @@ def converg(n):
 	k = 0 # P
 	l = 1 # Q
 
+	#print("%s^2 - %s*%s^2 = %s" % (p,n,q,p**2-n*q**2))
+
 	#1
 	k = az
 	l = n - az**2
@@ -48,39 +51,42 @@ def converg(n):
 	p = az*a + 1
 	q = a
 
-	try:
-		while p**2-n*q**2 != 1:
+	while p*p - n*q*q != 1:
 
-			#print("%s^2 - %s*%s^2 = %s" % (p,n,q,p**2-n*q**2))
-			ptmp = p
-			qtmp = q
+		#print("%s^2 - %s*%s^2 = %s" % (p,n,q,p**2-n*q**2))
+		ptmp = p
+		qtmp = q
 
-			# start
-			k = a * l - k
-			l = (n - k**2) / l
+		# start
+		k = int(a * l - k)
+		l = int((n - k*k) / l)
 
-			a = math.floor( (az + k ) / l)
-			p = a*p+p2
-			q = a*q+q2
+		a = int(math.floor( (az + k ) / l))
+		try:
+			p = int(a*p+p2)
+			q = int(a*q+q2)
+		except:
+			#print("DID NOT WORK...", p,q)
+			break
 
 
-			# ...
-			p2 = ptmp
-			q2 = qtmp
-	except:
-		print("%s DID NOT WORK" % i)
+		# ...
+		p2 = ptmp
+		q2 = qtmp
 
-	return int(p), int(q)
+	return p,q
+
 xlargest = 0
 iindex = 0
 for i in range(2, 1001):
 	if isPerfectSquare(i):
 		continue
 	x,y = converg(i)
+	#print(i, x, y)
 	if x > xlargest:
+		print("NEW RECORD", i, x)
 		xlargest = x
 		iindex = i
-	print(i, converg(i))
 
 print(iindex, xlargest)
 
