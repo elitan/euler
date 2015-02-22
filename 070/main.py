@@ -33,5 +33,18 @@ def isPermutation(n,m):
 		return nl == ml
 	return False
 
-pl = f.primeList(10**7)
-print(pl)
+#pl = f.primeList(10**7)
+#print(pl)
+
+
+"""
+create primeFac function: primeFac2(n, pl).
+
+return list type: [[2,3],[3,1]] for 2^3 * 3^1
+
+ezpz calculate phi.
+
+phi(2^3 * 3^1) = phi(2^3) * phi(3^1) = (2^3 - 2^2) * (3^1-3^0) = (8-4)*(3-1) = 4*2 = 8
+"""
+print(f.primeFac(24))
+print(phi(24))
