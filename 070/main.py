@@ -12,15 +12,25 @@ Find the value of n, 1 < n < 107, for which φ(n) is a permutation of n and the 
 import sys
 sys.path.append("../")
 import functions as f
-import fractions
-import itertools
 
-def phi(n):
-	amount = 0
-	for k in range(1, n + 1):
-		if fractions.gcd(n, k) == 1:
-			amount += 1
-	return amount
+def transformPrime(primeList):
+	pl = list()
+
+	for p in primeList:
+		found = False
+		for k in pl:
+			if p == k[0]:
+				k[1] += 1
+				found = True
+		if not found:
+			pl.append([p,1])
+	return pl
+
+def phi(pl):
+	s = 1
+	for p in pl:
+		s *= (p[0]**p[1]) - (p[0]**(p[1]-1))
+	return s
 
 def isPermutation(n,m):
 	nstr = str(n)
@@ -46,5 +56,13 @@ ezpz calculate phi.
 
 phi(2^3 * 3^1) = phi(2^3) * phi(3^1) = (2^3 - 2^2) * (3^1-3^0) = (8-4)*(3-1) = 4*2 = 8
 """
-print(f.primeFac(24))
-print(phi(24))
+m = 10**6
+iindex = 0
+for i in range(2, 10**7):
+	phiTmp = phi(transformPrime(f.primeFac(i)))
+	ratTmp = float(i) / phiTmp
+
+	if ratTmp < m and isPermutation(i, phiTmp):
+		m = ratTmp
+		iindex = i
+		print("New record!", i, phiTmp, ratTmp)
