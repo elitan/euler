@@ -7,4 +7,4 @@ Trying to learn some Python...
 
 https://projecteuler.net
 
-![Project Euler elitasson](https://projecteuler.net/profile/elitasson.png)
+![Project Euler elitan](https://projecteuler.net/profile/elitan.png)
