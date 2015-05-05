@@ -22,6 +22,6 @@ def farey(n):
         #print "%d/%d" % (a,b)
     return s-1
 
-f = farey(10**6)
+f = farey(10**5)
 
 print(f)
