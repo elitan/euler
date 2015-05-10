@@ -65,11 +65,12 @@ o.append(arr[0][0])
 while o:
 	node = o.pop(0)
 
+	# base case
 	if node.x == len(arr)-1 and node.y == len(arr)-1:
 		o = []
 		continue
 
-	# right
+	# check right node
 	try:
 		nextNode = arr[node.y][node.x+1]
 		nextNodeExists = True
@@ -79,7 +80,8 @@ while o:
 	if nextNodeExists:
 		checkNextNode(nextNode, node, o)
 
-	# bottom
+
+	# check bottom node
 	try:
 		nextNode = arr[node.y+1][node.x]
 		nextNodeExists = True
@@ -87,17 +89,13 @@ while o:
 		nextNodeExists = False
 
 	if nextNodeExists:
-		checkNextNode(nextNode, node, o)		
+		checkNextNode(nextNode, node, o)
 
-	# done
-	node.done = True
 
 	# order open nodes
 	orderO(o)
 
-# end
-
-
+# print bottom right node
 print(arr[len(arr)-1][len(arr)-1])
 
 
