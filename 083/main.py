@@ -26,14 +26,28 @@ class Node:
 		self.done = False
 		self.nodes = []
 
+
 	def addNode(self, node):
 		self.nodes.append(node)
 
 	def __repr__(self):
 		return "Y: %s, X: %s\nweight: %d, cost: %d, done: %s\noriginY: %d, originX: %d\n\n" % (self.y, self.x, self.weight, self.cost, self.done, self.originateY, self.originateX)
 
+
 def orderO(o):
 	return o.sort(key = lambda x: x.cost)
+
+
+def checkNextNode(nextNode, currentNode, o):
+	if nextNode.cost > currentNode.cost + nextNode.weight:
+		nextNode.cost = currentNode.cost + nextNode.weight
+		nextNode.originateX = currentNode.x
+		nextNode.originateY = currentNode.y
+
+	if not nextNode.added:
+		nextNode.added = True
+		o.append(nextNode)	
+
 
 # initiate
 fh = open('test.txt')
@@ -64,72 +78,43 @@ while o:
 
 	# right
 	try:
-		right = arr[node.y][node.x+1]
-		rightExists = True
+		nextNode = arr[node.y][node.x+1]
+		nextNodeExists = True
 	except:
-		rightExists = False
+		nextNodeExists = False
 
-	if rightExists:
-		if right.cost > node.cost + right.weight:
-			right.cost = node.cost + right.weight
-			right.originateX = node.x
-			right.originateY = node.y
+	if nextNodeExists:
+		checkNextNode(nextNode, node, o)
 
-		if not right.added:
-			right.added = True
-			o.append(right)
-
-	# left
+	# right
 	if node.x-1 >= 0:
-		left = arr[node.y][node.x-1]
-		leftExists = True
+		nextNode = arr[node.y][node.x-1]
+		nextNodeExists = True
 	else:
-		leftExists = False
+		nextNodeExists = False
 
-	if leftExists:
-		if left.cost > node.cost + left.weight:
-			left.cost = node.cost + left.weight
-			left.originateX = node.x
-			left.originateY = node.y
+	if nextNodeExists:
+		checkNextNode(nextNode, node, o)
 
-		if not left.added:
-			left.added = True
-			o.append(left)
-
-	# bottom
+	# right
 	try:
-		bottom = arr[node.y+1][node.x]
-		bottomExists = True
+		nextNode = arr[node.y][node.x+1]
+		nextNodeExists = True
 	except:
-		bottomExists = False
+		nextNodeExists = False
 
-	if bottomExists:
-		if bottom.cost > node.cost + bottom.weight:
-			bottom.cost = node.cost + bottom.weight
-			bottom.originateX = node.x
-			bottom.originateY = node.y
+	if nextNodeExists:
+		checkNextNode(nextNode, node, o)
 
-		if not bottom.added:
-			bottom.added = True
-			o.append(bottom)
+	# right
+	try:
+		nextNode = arr[node.y][node.x+1]
+		nextNodeExists = True
+	except:
+		nextNodeExists = False
 
-	# top
-	if node.y-1 >= 0:
-		top = arr[node.y-1][node.x]
-		topExists = True
-	else:
-		topExists = False
-
-	if topExists:
-		if top.cost > node.cost + top.weight:
-			top.cost = node.cost + top.weight
-			top.originateX = node.x
-			top.originateY = node.y
-
-		if not top.added:
-			top.added = True
-			o.append(top)
-
+	if nextNodeExists:
+		checkNextNode(nextNode, node, o)
 
 	orderO(o)
 
