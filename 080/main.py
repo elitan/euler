@@ -10,7 +10,7 @@ from decimal import *
 import sys
 
 
-getcontext().prec = 100	
+getcontext().prec = 102
 answer = 0
 i = 2
 while i < 100:
@@ -19,16 +19,14 @@ while i < 100:
 		i += 1
 		continue
 
-	print(i)
-	a = str(Decimal(i).sqrt()).split('.')[1][:100]
-
-	print(a)
+	a = str(Decimal(i).sqrt())[:101]
+	a = a.replace('.', '')
+	#a = str(Decimal(i) ** Decimal('0.5'))[:101]
 
 	for n in a:
 		answer += int(n)
-	print(answer)
-	print("")
 	#sys.exit()
+	print(i, answer)
 	i += 1
 
 print(answer)
