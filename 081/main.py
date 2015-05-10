@@ -17,23 +17,31 @@ import sys
 class Node:
 	def __init__(self, x, y, weight):
 		self.weight = int(weight)
-		self.cost = 10*100000
+		self.cost = float("inf")
 		self.x = int(x)
 		self.y = int(y)
 		self.originateX = -1
 		self.originateY = -1
 		self.added = False
-		self.done = False
-		self.nodes = []
 
 	def addNode(self, node):
 		self.nodes.append(node)
 
 	def __repr__(self):
-		return "Y: %s, X: %s\nweight: %d, cost: %d, done: %s\noriginY: %d, originX: %d" % (self.y, self.x, self.weight, self.cost, self.done, self.originateY, self.originateX)
+		return "Y: %s, X: %s\nweight: %d, cost: %d\noriginY: %d, originX: %d" % (self.y, self.x, self.weight, self.cost, self.originateY, self.originateX)
 
 def orderO(o):
 	return o.sort(key = lambda x: x.cost)
+
+def checkNextNode(nextNode, currentNode, o):
+	if nextNode.cost > currentNode.cost + nextNode.weight:
+		nextNode.cost = currentNode.cost + nextNode.weight
+		nextNode.originateX = currentNode.x
+		nextNode.originateY = currentNode.y
+
+	if not nextNode.added:
+		nextNode.added = True
+		o.append(nextNode)
 
 # initiate
 fh = open('test.txt')
@@ -63,48 +71,29 @@ while o:
 
 	# right
 	try:
-		right = arr[node.y][node.x+1]
-		rightExists = True
+		nextNode = arr[node.y][node.x+1]
+		nextNodeExists = True
 	except:
-		rightExists = False
+		nextNodeExists = False
 
-	if rightExists:
-		if right.cost > node.cost + right.weight:
-			right.cost = node.cost + right.weight
-			right.originateX = node.x
-			right.originateY = node.y
+	if nextNodeExists:
+		checkNextNode(nextNode, node, o)
 
-		if not right.done and not right.added:
-			right.added = True
-			o.append(right)
-
-	# bottom
 	# right
 	try:
-		bottom = arr[node.y+1][node.x]
-		bottomExists = True
+		nextNode = arr[node.y+1][node.x]
+		nextNodeExists = True
 	except:
-		bottomExists = False
+		nextNodeExists = False
 
-	if bottomExists:
-		bottom = arr[node.y+1][node.x]
-		if bottom.cost > node.cost + bottom.weight:
-			bottom.cost = node.cost + bottom.weight
-			bottom.originateX = node.x
-			bottom.originateY = node.y
-
-		if not bottom.done and not bottom.added:
-			bottom.added = True
-			o.append(bottom)
+	if nextNodeExists:
+		checkNextNode(nextNode, node, o)		
 
 	# done
 	node.done = True
 
-
+	# order open nodes
 	orderO(o)
-
-	print("")
-	print("")
 
 # end
 
