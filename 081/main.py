@@ -71,24 +71,14 @@ while o:
 		continue
 
 	# check right node
-	try:
+	if node.x+1 < len(arr):
 		nextNode = arr[node.y][node.x+1]
-		nextNodeExists = True
-	except:
-		nextNodeExists = False
-
-	if nextNodeExists:
 		checkNextNode(nextNode, node, o)
 
 
 	# check bottom node
-	try:
+	if node.y+1 < len(arr):
 		nextNode = arr[node.y+1][node.x]
-		nextNodeExists = True
-	except:
-		nextNodeExists = False
-
-	if nextNodeExists:
 		checkNextNode(nextNode, node, o)
 
 
