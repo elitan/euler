@@ -11,106 +11,86 @@ In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom
 Find the minimal path sum, in matrix.txt (right click and "Save Link/Target As..."), a 31K text file containing a 80 by 80 matrix, from the top left to the bottom right by only moving right and down.
 """
 
-import sys
-
 # node class
 class Node:
 	def __init__(self, x, y, weight):
 		self.weight = int(weight)
-		self.cost = 10*100000
+		self.cost = 10**1000000
 		self.x = int(x)
 		self.y = int(y)
 		self.originateX = -1
 		self.originateY = -1
 		self.added = False
-		self.done = False
-		self.nodes = []
 
 	def addNode(self, node):
 		self.nodes.append(node)
 
 	def __repr__(self):
-		return "Y: %s, X: %s\nweight: %d, cost: %d, done: %s\noriginY: %d, originX: %d" % (self.y, self.x, self.weight, self.cost, self.done, self.originateY, self.originateX)
+		return "Y: %s, X: %s\nweight: %d, cost: %d\noriginY: %d, originX: %d" % (self.y, self.x, self.weight, self.cost, self.originateY, self.originateX)
 
 def orderO(o):
 	return o.sort(key = lambda x: x.cost)
 
-# initiate
-fh = open('test.txt')
-fh = open('p081_matrix.txt')
-arr = []
-arr2 = []
+def checkNextNode(nextNode, currentNode, o):
+	if nextNode.cost > currentNode.cost + nextNode.weight:
+		nextNode.cost = currentNode.cost + nextNode.weight
+		nextNode.originateX = currentNode.x
+		nextNode.originateY = currentNode.y
 
-for y, line in enumerate(fh):
-	l = []
-	for x, weight in enumerate(line.replace('\n', '').split(',')):
-		l.append(Node(x, y, weight))
-	arr.append(l)
+	if not nextNode.added:
+		nextNode.added = True
+		o.append(nextNode)
 
-# open nodes (un done)
-o = []
+lowest = float("inf")
+fname = "test.txt"
+fname = "p082_matrix.txt"
+for i in range(sum(1 for line in open(fname))):
 
-# init first node
-arr[0][0].cost = arr[0][0].weight
-o.append(arr[0][0])
+	fh = open(fname)
+	arr = []
 
-while o:
-	node = o.pop(0)
+	for y, line in enumerate(fh):
+		l = []
+		for x, weight in enumerate(line.replace('\n', '').split(',')):
+			l.append(Node(x, y, weight))
+		arr.append(l)
 
-	if node.x == len(arr)-1 and node.y == len(arr)-1:
-		o = []
-		continue
+	# open nodes (un done)
+	o = []
 
-	# right
-	try:
-		right = arr[node.y][node.x+1]
-		rightExists = True
-	except:
-		rightExists = False
+	# init first node
+	arr[i][0].cost = arr[i][0].weight
+	o.append(arr[i][0])
 
-	if rightExists:
-		if right.cost > node.cost + right.weight:
-			right.cost = node.cost + right.weight
-			right.originateX = node.x
-			right.originateY = node.y
+	while o:
+		node = o.pop(0)
 
-		if not right.done and not right.added:
-			right.added = True
-			o.append(right)
+		# base case
+		if node.x == len(arr)-1:
+			o = []
+			continue
 
-	# bottom
-	# right
-	try:
-		bottom = arr[node.y+1][node.x]
-		bottomExists = True
-	except:
-		bottomExists = False
+		# check right node
+		if node.x+1 < len(arr):
+			nextNode = arr[node.y][node.x+1]
+			checkNextNode(nextNode, node, o)
 
-	if bottomExists:
-		bottom = arr[node.y+1][node.x]
-		if bottom.cost > node.cost + bottom.weight:
-			bottom.cost = node.cost + bottom.weight
-			bottom.originateX = node.x
-			bottom.originateY = node.y
+		# check top node
+		if node.y-1 >= 0:
+			nextNode = arr[node.y-1][node.x]
+			checkNextNode(nextNode, node, o)
 
-		if not bottom.done and not bottom.added:
-			bottom.added = True
-			o.append(bottom)
+		# check bottom node
+		if node.y+1 < len(arr):
+			nextNode = arr[node.y+1][node.x]
+			checkNextNode(nextNode, node, o)
 
-	# done
-	node.done = True
+		# order open nodes
+		orderO(o)
 
+	if node.cost < lowest:
+		lowest = node.cost
+	fh.close()
+	
 
-	orderO(o)
-
-	print("")
-	print("")
-
-# end
-
-
-print(arr[len(arr)-1][len(arr)-1])
-
-
-
-
+print(lowest)
