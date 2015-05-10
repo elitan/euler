@@ -79,7 +79,7 @@ while o:
 	if nextNodeExists:
 		checkNextNode(nextNode, node, o)
 
-	# right
+	# bottom
 	try:
 		nextNode = arr[node.y+1][node.x]
 		nextNodeExists = True
