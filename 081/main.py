@@ -75,12 +75,10 @@ while o:
 		nextNode = arr[node.y][node.x+1]
 		checkNextNode(nextNode, node, o)
 
-
 	# check bottom node
 	if node.y+1 < len(arr):
 		nextNode = arr[node.y+1][node.x]
 		checkNextNode(nextNode, node, o)
-
 
 	# order open nodes
 	orderO(o)
