@@ -50,7 +50,7 @@ def checkNextNode(nextNode, currentNode, o):
 
 
 # initiate
-fh = open('test.txt')
+#fh = open('test.txt')
 fh = open('p083_matrix.txt')
 arr = []
 arr2 = []
@@ -77,48 +77,26 @@ while o:
 		continue
 
 	# right
-	try:
+	if node.x+1 < len(arr):
 		nextNode = arr[node.y][node.x+1]
-		nextNodeExists = True
-	except:
-		nextNodeExists = False
-
-	if nextNodeExists:
 		checkNextNode(nextNode, node, o)
 
-	# right
+	# left
 	if node.x-1 >= 0:
 		nextNode = arr[node.y][node.x-1]
-		nextNodeExists = True
-	else:
-		nextNodeExists = False
-
-	if nextNodeExists:
 		checkNextNode(nextNode, node, o)
 
-	# right
-	try:
-		nextNode = arr[node.y][node.x+1]
-		nextNodeExists = True
-	except:
-		nextNodeExists = False
-
-	if nextNodeExists:
+	# top
+	if node.y+1 < len(arr):
+		nextNode = arr[node.y+1][node.x]
 		checkNextNode(nextNode, node, o)
 
-	# right
-	try:
-		nextNode = arr[node.y][node.x+1]
-		nextNodeExists = True
-	except:
-		nextNodeExists = False
-
-	if nextNodeExists:
+	# bottom
+	if node.y-1 >= 0:
+		nextNode = arr[node.y-1][node.x]
 		checkNextNode(nextNode, node, o)
 
 	orderO(o)
 
-# end
-
-
+# print bottom right node
 print(arr[len(arr)-1][len(arr)-1])
