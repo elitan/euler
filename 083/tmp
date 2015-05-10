@@ -1,0 +1,1064 @@
+current node:
+Y: 0, X: 0
+weight: 131, cost: 131, done: False
+originY: -1, originX: -1
+
+
+right exists
+Y: 0, X: 1
+weight: 673, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+bottom exists
+Y: 1, X: 0
+weight: 201, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top does not exists.
+-1
+OOOOOOOOOOOOOOOo
+[Y: 1, X: 0
+weight: 201, cost: 332, done: False
+originY: 0, originX: 0
+
+, Y: 0, X: 1
+weight: 673, cost: 804, done: False
+originY: 0, originX: 0
+
+]
+
+
+current node:
+Y: 1, X: 0
+weight: 201, cost: 332, done: False
+originY: 0, originX: 0
+
+
+right exists
+Y: 1, X: 1
+weight: 96, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+bottom exists
+Y: 2, X: 0
+weight: 630, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 0, X: 0
+weight: 131, cost: 131, done: False
+originY: -1, originX: -1
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 1, X: 1
+weight: 96, cost: 428, done: False
+originY: 1, originX: 0
+
+, Y: 0, X: 1
+weight: 673, cost: 804, done: False
+originY: 0, originX: 0
+
+, Y: 2, X: 0
+weight: 630, cost: 962, done: False
+originY: 1, originX: 0
+
+]
+
+
+current node:
+Y: 1, X: 1
+weight: 96, cost: 428, done: False
+originY: 1, originX: 0
+
+
+right exists
+Y: 1, X: 2
+weight: 342, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+left exists
+Y: 1, X: 0
+weight: 201, cost: 332, done: False
+originY: 0, originX: 0
+
+
+bottom exists
+Y: 2, X: 1
+weight: 803, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 0, X: 1
+weight: 673, cost: 804, done: False
+originY: 0, originX: 0
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 1, X: 2
+weight: 342, cost: 770, done: False
+originY: 1, originX: 1
+
+, Y: 0, X: 1
+weight: 673, cost: 804, done: False
+originY: 0, originX: 0
+
+, Y: 2, X: 0
+weight: 630, cost: 962, done: False
+originY: 1, originX: 0
+
+, Y: 2, X: 1
+weight: 803, cost: 1231, done: False
+originY: 1, originX: 1
+
+]
+
+
+current node:
+Y: 1, X: 2
+weight: 342, cost: 770, done: False
+originY: 1, originX: 1
+
+
+right exists
+Y: 1, X: 3
+weight: 965, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+left exists
+Y: 1, X: 1
+weight: 96, cost: 428, done: False
+originY: 1, originX: 0
+
+
+bottom exists
+Y: 2, X: 2
+weight: 746, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 0, X: 2
+weight: 234, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 0, X: 1
+weight: 673, cost: 804, done: False
+originY: 0, originX: 0
+
+, Y: 2, X: 0
+weight: 630, cost: 962, done: False
+originY: 1, originX: 0
+
+, Y: 0, X: 2
+weight: 234, cost: 1004, done: False
+originY: 1, originX: 2
+
+, Y: 2, X: 1
+weight: 803, cost: 1231, done: False
+originY: 1, originX: 1
+
+, Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+, Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+]
+
+
+current node:
+Y: 0, X: 1
+weight: 673, cost: 804, done: False
+originY: 0, originX: 0
+
+
+right exists
+Y: 0, X: 2
+weight: 234, cost: 1004, done: False
+originY: 1, originX: 2
+
+
+
+left exists
+Y: 0, X: 0
+weight: 131, cost: 131, done: False
+originY: -1, originX: -1
+
+
+bottom exists
+Y: 1, X: 1
+weight: 96, cost: 428, done: False
+originY: 1, originX: 0
+
+
+
+top does not exists.
+-1
+OOOOOOOOOOOOOOOo
+[Y: 2, X: 0
+weight: 630, cost: 962, done: False
+originY: 1, originX: 0
+
+, Y: 0, X: 2
+weight: 234, cost: 1004, done: False
+originY: 1, originX: 2
+
+, Y: 2, X: 1
+weight: 803, cost: 1231, done: False
+originY: 1, originX: 1
+
+, Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+, Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+]
+
+
+current node:
+Y: 2, X: 0
+weight: 630, cost: 962, done: False
+originY: 1, originX: 0
+
+
+right exists
+Y: 2, X: 1
+weight: 803, cost: 1231, done: False
+originY: 1, originX: 1
+
+
+
+bottom exists
+Y: 3, X: 0
+weight: 537, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 1, X: 0
+weight: 201, cost: 332, done: False
+originY: 0, originX: 0
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 0, X: 2
+weight: 234, cost: 1004, done: False
+originY: 1, originX: 2
+
+, Y: 2, X: 1
+weight: 803, cost: 1231, done: False
+originY: 1, originX: 1
+
+, Y: 3, X: 0
+weight: 537, cost: 1499, done: False
+originY: 2, originX: 0
+
+, Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+, Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+]
+
+
+current node:
+Y: 0, X: 2
+weight: 234, cost: 1004, done: False
+originY: 1, originX: 2
+
+
+right exists
+Y: 0, X: 3
+weight: 103, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+left exists
+Y: 0, X: 1
+weight: 673, cost: 804, done: False
+originY: 0, originX: 0
+
+
+bottom exists
+Y: 1, X: 2
+weight: 342, cost: 770, done: False
+originY: 1, originX: 1
+
+
+
+top does not exists.
+-1
+OOOOOOOOOOOOOOOo
+[Y: 0, X: 3
+weight: 103, cost: 1107, done: False
+originY: 0, originX: 2
+
+, Y: 2, X: 1
+weight: 803, cost: 1231, done: False
+originY: 1, originX: 1
+
+, Y: 3, X: 0
+weight: 537, cost: 1499, done: False
+originY: 2, originX: 0
+
+, Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+, Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+]
+
+
+current node:
+Y: 0, X: 3
+weight: 103, cost: 1107, done: False
+originY: 0, originX: 2
+
+
+right exists
+Y: 0, X: 4
+weight: 18, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+left exists
+Y: 0, X: 2
+weight: 234, cost: 1004, done: False
+originY: 1, originX: 2
+
+
+bottom exists
+Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+
+
+top does not exists.
+-1
+OOOOOOOOOOOOOOOo
+[Y: 0, X: 4
+weight: 18, cost: 1125, done: False
+originY: 0, originX: 3
+
+, Y: 2, X: 1
+weight: 803, cost: 1231, done: False
+originY: 1, originX: 1
+
+, Y: 3, X: 0
+weight: 537, cost: 1499, done: False
+originY: 2, originX: 0
+
+, Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+, Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+]
+
+
+current node:
+Y: 0, X: 4
+weight: 18, cost: 1125, done: False
+originY: 0, originX: 3
+
+
+left exists
+Y: 0, X: 3
+weight: 103, cost: 1107, done: False
+originY: 0, originX: 2
+
+
+bottom exists
+Y: 1, X: 4
+weight: 150, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top does not exists.
+-1
+OOOOOOOOOOOOOOOo
+[Y: 2, X: 1
+weight: 803, cost: 1231, done: False
+originY: 1, originX: 1
+
+, Y: 1, X: 4
+weight: 150, cost: 1275, done: False
+originY: 0, originX: 4
+
+, Y: 3, X: 0
+weight: 537, cost: 1499, done: False
+originY: 2, originX: 0
+
+, Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+, Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+]
+
+
+current node:
+Y: 2, X: 1
+weight: 803, cost: 1231, done: False
+originY: 1, originX: 1
+
+
+right exists
+Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+
+
+left exists
+Y: 2, X: 0
+weight: 630, cost: 962, done: False
+originY: 1, originX: 0
+
+
+bottom exists
+Y: 3, X: 1
+weight: 699, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 1, X: 1
+weight: 96, cost: 428, done: False
+originY: 1, originX: 0
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 1, X: 4
+weight: 150, cost: 1275, done: False
+originY: 0, originX: 4
+
+, Y: 3, X: 0
+weight: 537, cost: 1499, done: False
+originY: 2, originX: 0
+
+, Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+, Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+, Y: 3, X: 1
+weight: 699, cost: 1930, done: False
+originY: 2, originX: 1
+
+]
+
+
+current node:
+Y: 1, X: 4
+weight: 150, cost: 1275, done: False
+originY: 0, originX: 4
+
+
+left exists
+Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+
+bottom exists
+Y: 2, X: 4
+weight: 111, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 0, X: 4
+weight: 18, cost: 1125, done: False
+originY: 0, originX: 3
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 2, X: 4
+weight: 111, cost: 1386, done: False
+originY: 1, originX: 4
+
+, Y: 3, X: 0
+weight: 537, cost: 1499, done: False
+originY: 2, originX: 0
+
+, Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+, Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+, Y: 3, X: 1
+weight: 699, cost: 1930, done: False
+originY: 2, originX: 1
+
+]
+
+
+current node:
+Y: 2, X: 4
+weight: 111, cost: 1386, done: False
+originY: 1, originX: 4
+
+
+left exists
+Y: 2, X: 3
+weight: 422, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+bottom exists
+Y: 3, X: 4
+weight: 956, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 1, X: 4
+weight: 150, cost: 1275, done: False
+originY: 0, originX: 4
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 3, X: 0
+weight: 537, cost: 1499, done: False
+originY: 2, originX: 0
+
+, Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+, Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+, Y: 2, X: 3
+weight: 422, cost: 1808, done: False
+originY: 2, originX: 4
+
+, Y: 3, X: 1
+weight: 699, cost: 1930, done: False
+originY: 2, originX: 1
+
+, Y: 3, X: 4
+weight: 956, cost: 2342, done: False
+originY: 2, originX: 4
+
+]
+
+
+current node:
+Y: 3, X: 0
+weight: 537, cost: 1499, done: False
+originY: 2, originX: 0
+
+
+right exists
+Y: 3, X: 1
+weight: 699, cost: 1930, done: False
+originY: 2, originX: 1
+
+
+
+bottom exists
+Y: 4, X: 0
+weight: 805, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 2, X: 0
+weight: 630, cost: 962, done: False
+originY: 1, originX: 0
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+, Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+, Y: 2, X: 3
+weight: 422, cost: 1808, done: False
+originY: 2, originX: 4
+
+, Y: 3, X: 1
+weight: 699, cost: 1930, done: False
+originY: 2, originX: 1
+
+, Y: 4, X: 0
+weight: 805, cost: 2304, done: False
+originY: 3, originX: 0
+
+, Y: 3, X: 4
+weight: 956, cost: 2342, done: False
+originY: 2, originX: 4
+
+]
+
+
+current node:
+Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+
+right exists
+Y: 2, X: 3
+weight: 422, cost: 1808, done: False
+originY: 2, originX: 4
+
+
+
+left exists
+Y: 2, X: 1
+weight: 803, cost: 1231, done: False
+originY: 1, originX: 1
+
+
+bottom exists
+Y: 3, X: 2
+weight: 497, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 1, X: 2
+weight: 342, cost: 770, done: False
+originY: 1, originX: 1
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+, Y: 2, X: 3
+weight: 422, cost: 1808, done: False
+originY: 2, originX: 4
+
+, Y: 3, X: 1
+weight: 699, cost: 1930, done: False
+originY: 2, originX: 1
+
+, Y: 3, X: 2
+weight: 497, cost: 2013, done: False
+originY: 2, originX: 2
+
+, Y: 4, X: 0
+weight: 805, cost: 2304, done: False
+originY: 3, originX: 0
+
+, Y: 3, X: 4
+weight: 956, cost: 2342, done: False
+originY: 2, originX: 4
+
+]
+
+
+current node:
+Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+
+right exists
+Y: 1, X: 4
+weight: 150, cost: 1275, done: False
+originY: 0, originX: 4
+
+
+
+left exists
+Y: 1, X: 2
+weight: 342, cost: 770, done: False
+originY: 1, originX: 1
+
+
+bottom exists
+Y: 2, X: 3
+weight: 422, cost: 1808, done: False
+originY: 2, originX: 4
+
+
+
+top exists
+Y: 0, X: 3
+weight: 103, cost: 1107, done: False
+originY: 0, originX: 2
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 2, X: 3
+weight: 422, cost: 1808, done: False
+originY: 2, originX: 4
+
+, Y: 3, X: 1
+weight: 699, cost: 1930, done: False
+originY: 2, originX: 1
+
+, Y: 3, X: 2
+weight: 497, cost: 2013, done: False
+originY: 2, originX: 2
+
+, Y: 4, X: 0
+weight: 805, cost: 2304, done: False
+originY: 3, originX: 0
+
+, Y: 3, X: 4
+weight: 956, cost: 2342, done: False
+originY: 2, originX: 4
+
+]
+
+
+current node:
+Y: 2, X: 3
+weight: 422, cost: 1808, done: False
+originY: 2, originX: 4
+
+
+right exists
+Y: 2, X: 4
+weight: 111, cost: 1386, done: False
+originY: 1, originX: 4
+
+
+
+left exists
+Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+
+bottom exists
+Y: 3, X: 3
+weight: 121, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 1, X: 3
+weight: 965, cost: 1735, done: False
+originY: 1, originX: 2
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 3, X: 3
+weight: 121, cost: 1929, done: False
+originY: 2, originX: 3
+
+, Y: 3, X: 1
+weight: 699, cost: 1930, done: False
+originY: 2, originX: 1
+
+, Y: 3, X: 2
+weight: 497, cost: 2013, done: False
+originY: 2, originX: 2
+
+, Y: 4, X: 0
+weight: 805, cost: 2304, done: False
+originY: 3, originX: 0
+
+, Y: 3, X: 4
+weight: 956, cost: 2342, done: False
+originY: 2, originX: 4
+
+]
+
+
+current node:
+Y: 3, X: 3
+weight: 121, cost: 1929, done: False
+originY: 2, originX: 3
+
+
+right exists
+Y: 3, X: 4
+weight: 956, cost: 2342, done: False
+originY: 2, originX: 4
+
+
+
+left exists
+Y: 3, X: 2
+weight: 497, cost: 2013, done: False
+originY: 2, originX: 2
+
+
+bottom exists
+Y: 4, X: 3
+weight: 37, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 2, X: 3
+weight: 422, cost: 1808, done: False
+originY: 2, originX: 4
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 3, X: 1
+weight: 699, cost: 1930, done: False
+originY: 2, originX: 1
+
+, Y: 4, X: 3
+weight: 37, cost: 1966, done: False
+originY: 3, originX: 3
+
+, Y: 3, X: 2
+weight: 497, cost: 2013, done: False
+originY: 2, originX: 2
+
+, Y: 4, X: 0
+weight: 805, cost: 2304, done: False
+originY: 3, originX: 0
+
+, Y: 3, X: 4
+weight: 956, cost: 2342, done: False
+originY: 2, originX: 4
+
+]
+
+
+current node:
+Y: 3, X: 1
+weight: 699, cost: 1930, done: False
+originY: 2, originX: 1
+
+
+right exists
+Y: 3, X: 2
+weight: 497, cost: 2013, done: False
+originY: 2, originX: 2
+
+
+
+left exists
+Y: 3, X: 0
+weight: 537, cost: 1499, done: False
+originY: 2, originX: 0
+
+
+bottom exists
+Y: 4, X: 1
+weight: 732, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+top exists
+Y: 2, X: 1
+weight: 803, cost: 1231, done: False
+originY: 1, originX: 1
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 4, X: 3
+weight: 37, cost: 1966, done: False
+originY: 3, originX: 3
+
+, Y: 3, X: 2
+weight: 497, cost: 2013, done: False
+originY: 2, originX: 2
+
+, Y: 4, X: 0
+weight: 805, cost: 2304, done: False
+originY: 3, originX: 0
+
+, Y: 3, X: 4
+weight: 956, cost: 2342, done: False
+originY: 2, originX: 4
+
+, Y: 4, X: 1
+weight: 732, cost: 2662, done: False
+originY: 3, originX: 1
+
+]
+
+
+current node:
+Y: 4, X: 3
+weight: 37, cost: 1966, done: False
+originY: 3, originX: 3
+
+
+right exists
+Y: 4, X: 4
+weight: 331, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+
+left exists
+Y: 4, X: 2
+weight: 524, cost: 1000000, done: False
+originY: -1, originX: -1
+
+
+top exists
+Y: 3, X: 3
+weight: 121, cost: 1929, done: False
+originY: 2, originX: 3
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 3, X: 2
+weight: 497, cost: 2013, done: False
+originY: 2, originX: 2
+
+, Y: 4, X: 4
+weight: 331, cost: 2297, done: False
+originY: 4, originX: 3
+
+, Y: 4, X: 0
+weight: 805, cost: 2304, done: False
+originY: 3, originX: 0
+
+, Y: 3, X: 4
+weight: 956, cost: 2342, done: False
+originY: 2, originX: 4
+
+, Y: 4, X: 2
+weight: 524, cost: 2490, done: False
+originY: 4, originX: 3
+
+, Y: 4, X: 1
+weight: 732, cost: 2662, done: False
+originY: 3, originX: 1
+
+]
+
+
+current node:
+Y: 3, X: 2
+weight: 497, cost: 2013, done: False
+originY: 2, originX: 2
+
+
+right exists
+Y: 3, X: 3
+weight: 121, cost: 1929, done: False
+originY: 2, originX: 3
+
+
+
+left exists
+Y: 3, X: 1
+weight: 699, cost: 1930, done: False
+originY: 2, originX: 1
+
+
+bottom exists
+Y: 4, X: 2
+weight: 524, cost: 2490, done: False
+originY: 4, originX: 3
+
+
+
+top exists
+Y: 2, X: 2
+weight: 746, cost: 1516, done: False
+originY: 1, originX: 2
+
+
+
+OOOOOOOOOOOOOOOo
+[Y: 4, X: 4
+weight: 331, cost: 2297, done: False
+originY: 4, originX: 3
+
+, Y: 4, X: 0
+weight: 805, cost: 2304, done: False
+originY: 3, originX: 0
+
+, Y: 3, X: 4
+weight: 956, cost: 2342, done: False
+originY: 2, originX: 4
+
+, Y: 4, X: 2
+weight: 524, cost: 2490, done: False
+originY: 4, originX: 3
+
+, Y: 4, X: 1
+weight: 732, cost: 2662, done: False
+originY: 3, originX: 1
+
+]
+
+
+Y: 4, X: 4
+weight: 331, cost: 2297, done: False
+originY: 4, originX: 3
+
+
