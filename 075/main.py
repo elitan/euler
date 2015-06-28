@@ -16,6 +16,22 @@ In contrast, some lengths of wire, like 20 cm, cannot be bent to form an integer
 Given that L is the length of the wire, for how many values of L ≤ 1,500,000 can exactly one integer sided right angle triangle be formed?
 """
 
-print(3**2 + 4**2)
-print(5**2)
-print(3+4+5)
+import fractions
+import sys
+
+
+for n in range(1, 10):
+	for m in range(1, 10):
+
+		if fractions.gcd(m,n) == 1 and m > n and m-n % 2 == 1:
+			a = m**2 - n**2
+			b = 2 * m * n
+			c = m**2 + n**2
+			print(a,b,c)
+		else:
+			#print("nope: %d, %d" % (n,m))
+			a = m**2 - n**2
+			b = 2 * m * n
+			c = m**2 + n**2
+			print(a,b,c)
+			pass
