@@ -9,6 +9,7 @@ By solving all fifty puzzles find the sum of the 3-digit numbers found in the to
 """
 import sys
 import time
+import copy
 
 # global variable
 fullNrSet = set()
@@ -27,18 +28,16 @@ class Node():
 		return 0 not in self.possible and len(self.possible) == 1
 
 
-	def nrExists(self, n):
-		return n in self.possible
-
 	def newSet(self, s):
 		self.possible = s
 
-	def add(self, n):
-		self.possible.add(n)
+
+	def len(self):
+		return len(self.possible)
 
 
-	def remove(self, n):
-		self.possible.remove(n)
+	def getPossible(self):
+		return self.possible
 
 
 	def number(self):
@@ -53,7 +52,7 @@ class Node():
 		global fullNrSet
 
 		if self.done():
-			return False
+			return True
 
 		foundNr = set()
 		# check row
@@ -74,11 +73,13 @@ class Node():
 				n = sudo[r][c]
 				if n != self and n.done():
 					foundNr.add(n.number())
-		if self.possible != (fullNrSet - foundNr):
-			print("new set")
+		if self.possible != (fullNrSet - foundNr) and len(fullNrSet - foundNr) != 0:
 			self.newSet(fullNrSet - foundNr)
 			return True
-		return False
+		elif len(fullNrSet - foundNr) == 0:
+			print("FULL EXIT, GO BACK")
+			return False
+		return True
 
 
 	def __str__(self):
@@ -93,23 +94,70 @@ print(tn)
 sys.exit()
 """
 
+def printSudo(sudo):
+	for row in range(0, 9):
+		for col in range(0, 9):
+			sys.stdout.write("%s \t" % sudo[row][col].getPossible())
+		sys.stdout.write("\n")
 
-def solveSudoko(sudo):
+
+def solveSimple(sudo):
 	reRun = True
 	while reRun:
-		print("ss")
 		reRun = False
 		for row,r in enumerate(sudo):
 			for col,node in enumerate(r):
-				print(node)
-				if node.possibleNumbers(sudo):
-					print("do again!")
+				#print(node)
+				r = node.possibleNumbers(sudo) 
+				if not r:
+					#printSudo(sudo)
+					#sys.exit();
+					return False
+					#print("do again!")
 					reRun = True
 
-				print(node)
-				print("")
+				#print(node)
+				#print("")
 				#time.sleep(0.4)
 				#sys.exit()
+	print(r)
+	#print("We need to backtrack this sudoku!");
+	return True # no solution found?
+
+def solveSudoko(sudo, rowStart = 0, colStart = 0):
+	for row in range(rowStart, 9):
+		for col in range(colStart, 9):
+			print("######")
+			print(row, col)
+			print("######")
+			r = solveSimple(sudo)
+			current_node = sudo[row][col]
+			print(row, col, r)
+
+			if current_node.len() == 1:
+				continue
+
+			if not r:
+				printSudo(sudo)
+				print(current_node)
+				return False
+
+			#time.sleep(.5)
+
+				
+			for c in current_node.getPossible():
+				print("Currently on")
+				print(row, col, c, current_node.getPossible())
+				sudo[row][col] = Node(c, row, col)
+				r = solveSudoko(copy.deepcopy(sudo))
+				print("r was " , r)
+				if not r:
+					print("false")
+					printSudo(sudo)
+					#sys.exit()					
+					print("continue 2")
+					continue
+	printSudo(sudo)
 
 
 # parse text
@@ -135,4 +183,5 @@ sudoArr.pop(0)
 # solve soduko
 for sudo in sudoArr:
 	solveSudoko(sudo)
+	print("done??")
 	sys.exit()
