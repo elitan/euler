@@ -55,7 +55,7 @@ def is_right_angle_triangle(a,b,c):
 	if a == b or a == c or b == c:
 		return False
 
-	# check if two coordinates lay on the same line
+	# check if all three coordinates lay on the same line
 	# if so, thay can not form a triangle
 	if coordinates_on_line(a,b) and coordinates_on_line(a,c) and coordinates_on_line(c,b):
 		return False
@@ -114,4 +114,4 @@ for pX in range(0, size):
 					c += 1
 
 print(c)
-print(c/2)
+print(c/2) # forgive me :(
