@@ -11,6 +11,8 @@ O   O   O   O   O
 Find the least value of n for which p(n) is divisible by one million.
 """
 
+# https://en.wikipedia.org/wiki/Partition_(number_theory)
+
 def p(n):
 	available_value = list(xrange(n+1))[1:]
 	ways = [1] + [0]*n
