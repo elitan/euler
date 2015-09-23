@@ -21,3 +21,9 @@ def p(n):
 		for i in range(value, n+1):
 			ways[i] += ways[i-value]
 	return ways[n]
+
+i = 5500
+
+while p(i) % 10**6 != 0:
+	i += 1
+	print(i)
