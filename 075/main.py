@@ -18,16 +18,22 @@ Given that L is the length of the wire, for how many values of L ≤ 1,500,000 c
 
 import fractions
 import sys
+import math
 
-for n in range(1, 20):
-	for m in range(n+1, 20):
+L = 1500000
+c = 0
+
+for n in range(1, int(math.sqrt(L))):
+	for m in range(n+1, int(math.sqrt(L))):
 		#print("examin: m: %d, n: %d" % (m, n))
 		#print("gcd: %d" % fractions.gcd(m,n))
 		#print("m>n", m>n)
 		#print("m-n % 2", (m-n) % 2)
 
 		if fractions.gcd(m,n) == 1 and m > n and (m-n) % 2 == 1:
-			print("MATCH!")
-			print(m**2-n**2, 2*m*n, m**2+n**2)
+			c += 1
+			#print("MATCH!")
+			#print(m**2-n**2, 2*m*n, m**2+n**2)
 
 		#print("")
+print("%d uniq triplets" % c)
