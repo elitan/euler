@@ -19,21 +19,34 @@ Given that L is the length of the wire, for how many values of L ≤ 1,500,000 c
 import fractions
 import sys
 import math
+import random
 
 L = 1500000
-c = 0
+result = 0
+arr = [0]*(L+1)
+uniq = set()
 
-for n in range(1, int(math.sqrt(L))):
-	for m in range(n+1, int(math.sqrt(L))):
-		#print("examin: m: %d, n: %d" % (m, n))
-		#print("gcd: %d" % fractions.gcd(m,n))
-		#print("m>n", m>n)
-		#print("m-n % 2", (m-n) % 2)
+for m in range(2, int(math.sqrt(L/2))):
+	for n in range(1, m):
+		if (n+m) % 2 == 1 and fractions.gcd(m,n) == 1:
 
-		if fractions.gcd(m,n) == 1 and m > n and (m-n) % 2 == 1:
-			c += 1
-			#print("MATCH!")
-			#print(m**2-n**2, 2*m*n, m**2+n**2)
+			a = m**2 - n**2
+			b = 2 * m * n
+			c = m**2 + n**2
 
-		#print("")
-print("%d uniq triplets" % c)
+			o = a + b + c
+
+			while o <= L:
+
+				arr[o] += 1
+				
+				# first time added
+				if arr[o] == 1:
+					result += 1
+				# second time added, dont include
+				elif arr[o] == 2:
+					result -= 1
+
+				o += a+b+c
+
+print(result)
