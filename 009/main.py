@@ -1,5 +1,3 @@
-#!/bin/py
-
 """
 A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
 
@@ -10,25 +8,19 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product abc.
 """
 
+import sys
 import math as m
 
 def isPythagoreanTriplet(a, b, c):
-	if m.pow(a, 2) + m.pow(b, 2) == m.pow(c, 2):
-		return True
-	else:
-		return False
+	return m.pow(a, 2) + m.pow(b, 2) == m.pow(c, 2)
 
-a = 1
+def pythagorean_triplet(s):
+	for a in range(1, s):
+		for b in range(1, s):
+			c = s - a - b
+			if isPythagoreanTriplet(a,b,c):
+				return a*b*c
 
-while a < 1000:
-	b = a+1
-	while b < 1000:
-		c = b+1
-		while c < 1000:
-			if a + b + c == 1000 and isPythagoreanTriplet(a, b, c):
+r = pythagorean_triplet(1000);
 
-				print("a: %d, b: %d, c: %d. Product: %d" % (a, b, c, (a*b*c)))
-				exit(0)				
-			c += 1
-		b += 1
-	a += 1
+print(r)
