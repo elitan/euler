@@ -11,66 +11,40 @@ O   O   O   O   O
 Find the least value of n for which p(n) is divisible by one million.
 """
 
+"""
+
 # https://en.wikipedia.org/wiki/Partition_(number_theory)
-# http://mathworld.wolfram.com/Partition.html
+https://en.wikipedia.org/wiki/Pentagonal_number
+
+p(n) = p(n-1) + p(n-2) + p(n-5)
+
+where 1,2,5 are generalized pentagonal numbers.
+
+"""
 
 import sys
 
-def p(n):
-	available_value = list(xrange(n+1))[1:]
-	ways = [1] + [0]*n
+def gpn(n):
+	return (3 * n * n - n) / 2
 
-	for value in available_value:
-		for i in range(value, n+1):
-			ways[i] += ways[i-value]
-	return ways[n]
-
-class Memoize:
-    """decorator to memoise a function"""
-    def __init__(self, f):
-        self.f = f
-        self.cache = {}
- 
-    def __call__(self, *args):
-        if not args in self.cache:
-            self.cache[args] = self.f(*args)
-        return self.cache[args]
- 
-@Memoize
-def bigp(n):    
-    if n < 0:
-        return 0
-    if n == 0:
-        return 1
-     
-    # run k from n to 1 to avoid excessive recursion depth
-    return sum((-1) ** (k + 1) * (bigp(n - k * (3 * k - 1) / 2) + bigp(n - k * (3 * k + 1) / 2)) for k in range(n,0,-1))
-
-limit = 1
-i = 9
-while limit < 100000:
-	limit *= 10
-	while p(i) % limit != 0:
-		i += 10
-		print(i)
-		#print(i)
-
-	print(limit)
+def p(n, i):
+	print(n)
 	print(i)
-	print(p(i))
-	print("")
-#print bigp(1000)
+	print(gpnlist)
+	print(gpnlist[i])
+	if n - gpnlist[i] < 0:
+		return 0
+	else:
+		return plist[n-i] + p(n, i+1)
 
-sys.exit()
+# p(0)
+plist = [1]
+gpnlist = []
 
-limit = 1
-i = 1
-while limit < 100000:
-	limit *= 10
-	while p(i) % limit != 0:
-		i += 1
-		#print(i)
+for i in range(1,10):
+	gpnlist.append(gpn(i))
+	gpnlist.append(gpn(-i))
 
-	print(limit)
-	print(i)
-	print(p(i))
+for n in range(1, 10):
+	print(p(n, 0))
+	sys.exit()
