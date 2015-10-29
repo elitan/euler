@@ -10,14 +10,18 @@ import sys
 sys.path.append("../")
 import functions as f
 
+# s = k^2 - k
+def findB(s):
+	b = 1
+	while (b*b - b) * 2 < s:
+		b+=1
+	return (b*b - b) * 2 == s, b
 
-k = 10**12
-s = (k * (k-1)) / 2
+k = 15
 
-b = 1
-while (b * b) - b < s:
-	a = (b * b) - b
-	if a % 10000000 == 0:
-		print(a)
-		print(s)
-	b += 1
+while k < 2500000:
+	res = findB(k*k-k)
+	if res[0]:
+		print(res[1], k)
+	k += 1
+
