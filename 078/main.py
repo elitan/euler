@@ -27,39 +27,28 @@ import sys
 def gpn(n):
 	return (3 * n * n - n) / 2
 
-def usePlus(i):
-	i = i % 4
-	return i == 0 or i == 3
-
 def p(n, i):
 	if n - gpnlist[i] < 0:
 		return 0
 	else:
-		print("#######")
-		print("n", n)
-		print("i", i)
-		print("gpnlist[i]", gpnlist[i])
-		print("plist", plist)
-		print(plist[n-gpnlist[i]])
-		if usePlus(i):
-			print("+")
+		if i % 4 <= 1: # use plus
 			return plist[n-gpnlist[i]] + p(n, i+1)
 		else:
-			print("-")
-			return plist[n-gpnlist[i]] - p(n, i+1)
+			return -1 * plist[n-gpnlist[i]] + p(n, i+1)
 
 # p(0)
 plist = [1]
 gpnlist = []
 
-for i in range(1,10):
+for i in range(1,100000):
 	gpnlist.append(gpn(i))
 	gpnlist.append(gpn(-i))
 
-for n in range(1, 6):
-	print("NEW NNNNNNNNNNNN")
-	res = p(n, 0)
-	plist.append(res)
-	print("RES:", n, res)
+n = 1
+pn = 1
+while pn % 10**6 != 0:
+	pn = p(n, 0)
+	plist.append(pn)
+	n += 1
 
-print(plist)
+print(n-1)
