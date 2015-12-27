@@ -42,19 +42,19 @@ def isPrime(n):
 	return True    
 
 
-def devisors(n):
-	dev = []
-	dev.append(1)
+def divisors(n):
+	div = []
+	div.append(1)
 	for i in range(2, int(m.ceil(n**0.5))):
 		if n % i == 0:
-			dev.append(i)
-			dev.append(int(n/i))
+			div.append(i)
+			div.append(int(n/i))
 
 	if m.sqrt(n) == m.floor(m.sqrt(n)):
-		dev.append(m.sqrt(n))
+		div.append(m.sqrt(n))
 
-	dev.sort()
-	return dev
+	div.sort()
+	return div
 	
 def primeList(top):
 	primes = []
