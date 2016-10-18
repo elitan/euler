@@ -6,6 +6,25 @@ import (
 	"sort"
 )
 
+
+type Row struct {
+	n, rad int
+}
+
+type Rows []Row
+
+func (slice Rows) Len() int {
+	return len(slice);
+}
+
+func (slice Rows) Less(i, j int) bool {
+	return slice[i].rad < slice[j].rad;
+}
+
+func (slice Rows) Swap(i, j int) {
+	slice[i], slice[j] = slice[j], slice[i];
+}
+
 func intInArray(n int, list []int) bool {
 	for _, x := range list {
 		if n == x {
@@ -45,15 +64,14 @@ func rad(n int) int {
 }
 
 func main() {
-
-	max := 10
-	rad_list := make([]int, 0, max)
+	max := 100000
+	rad_list := Rows{}
 	for i := 1; i <= max; i++ {
-		pf := rad(i)
-		rad_list = append(rad_list, pf)
-		fmt.Println(i, pf)
+		row := Row{i, rad(i)}
+		rad_list = append(rad_list, row)
 	}
-	sort.Ints(rad_list)
-	fmt.Println(rad_list)
-	fmt.Println("done")
+
+	sort.Sort(rad_list) // sort on rad
+
+	fmt.Println(rad_list[10000].n)
 }
